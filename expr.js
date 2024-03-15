@@ -5,6 +5,7 @@ const db = require('./db');
 const Person = require('./models/person');
 const Menu = require('./models/menu');
 
+require('dotenv').config();
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());            // middleware for parsing json data
@@ -93,6 +94,7 @@ const menuRoutes = require('./routes/menuRoutes')
 app.use("/person", personRoutes);
 app.use("/menu", menuRoutes);
 
+const PORT = process.env.PORT || 4000;
 app.listen(4000, ()=>{
     console.log('server is live');
 })

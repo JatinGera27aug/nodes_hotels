@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-const mongourl = "mongodb://127.0.0.1/hotel"; // replace after 7/ with your dbs name
-
+// const mongourl = "mongodb://127.0.0.1/hotel"; // replace after 7/ with your dbs name
+const mongourl = process.env.DB_URL;
 
 // setting up connection
 mongoose.connect(mongourl, {
